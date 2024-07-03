@@ -21,7 +21,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <div className="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg">
+      <div className="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg glowing-shadow">
         <h1 className="text-2xl mb-4">Login</h1>
         <div className="space-y-4">
           <div>
@@ -32,7 +32,7 @@ const Login = () => {
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <Button className="btn-blue shadow-lg" onClick={handleLogin}>Login</Button>
+          <Button className="btn-blue glowing-shadow" onClick={handleLogin}>Login</Button>
         </div>
       </div>
     </div>
