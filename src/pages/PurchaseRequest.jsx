@@ -20,7 +20,7 @@ const PurchaseRequest = () => {
     e.preventDefault();
     // Handle form submission logic here
     console.log("Form submitted:", formData);
-    alert("Purchase request submitted!");
+    alert("Your purchase request has been successfully submitted!");
     setFormData({ itemName: "", quantity: "", reason: "" });
   };
 
