@@ -9,9 +9,19 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const users = [
+    { username: "admin", password: "password" },
+    { username: "user1", password: "password1" },
+    { username: "user2", password: "password2" },
+  ];
+
   const handleLogin = () => {
     // Implement your login logic here
-    if (username === "admin" && password === "password") {
+    const user = users.find(
+      (user) => user.username === username && user.password === password
+    );
+
+    if (user) {
       alert("Login successful!");
       navigate("/");
     } else {
