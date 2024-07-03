@@ -26,7 +26,7 @@ const Inventory = () => {
 
   return (
     <div className="shadow-lg p-6 rounded-lg glowing-shadow">
-      <h1 className="text-2xl mb-4">Inventory Data</h1>
+      <h1 className="text-2xl mb-4">Inventory Management</h1>
       <div className="mb-4">
         <Dialog>
           <DialogTrigger asChild>

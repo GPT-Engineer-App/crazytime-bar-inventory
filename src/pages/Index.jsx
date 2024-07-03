@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const Index = () => {
   return (
     <div className="text-center shadow-lg p-6 rounded-lg glowing-shadow">
-      <h1 className="text-3xl mb-4">Welcome to Crazytime Restobar Inventory System</h1>
+      <h1 className="text-3xl mb-4">Welcome to the Ultimate Inventory Management System</h1>
       <p className="mb-4">Manage your inventory efficiently and effectively.</p>
       <div className="space-x-4">
         <Link to="/inventory">
