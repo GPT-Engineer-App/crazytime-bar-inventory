@@ -45,7 +45,7 @@ const Layout = () => {
           <div className="w-full flex-1">{/* Add nav bar content here! */}</div>
           <UserDropdown />
         </header>
-        <main className="flex-grow p-4 overflow-auto shadow-lg">
+        <main className="flex-grow p-4 overflow-auto shadow-lg border border-gray-300">
           <Outlet />
         </main>
         <Footer />

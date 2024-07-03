@@ -28,7 +28,7 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="shadow-lg p-6 rounded-lg shadow-lg">
+    <div className="shadow-lg p-6 rounded-lg border border-gray-300">
       <h1 className="text-2xl mb-4">Settings</h1>
       <div className="space-y-4">
         <div>
