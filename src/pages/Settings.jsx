@@ -12,14 +12,14 @@ const SettingsPage = () => {
   };
 
   return (
-    <div>
+    <div className="shadow-lg p-6 rounded-lg shadow-lg">
       <h1 className="text-2xl mb-4">Settings</h1>
       <div className="space-y-4">
         <div>
           <Label htmlFor="webhookUrl">Webhook URL</Label>
           <Input id="webhookUrl" value={webhookUrl} onChange={(e) => setWebhookUrl(e.target.value)} />
         </div>
-        <Button className="btn-blue" onClick={handleSave}>Save Webhook URL</Button>
+        <Button className="btn-blue shadow-lg" onClick={handleSave}>Save Webhook URL</Button>
       </div>
     </div>
   );

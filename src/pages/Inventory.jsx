@@ -25,12 +25,12 @@ const Inventory = () => {
   };
 
   return (
-    <div>
+    <div className="shadow-lg p-6 rounded-lg shadow-lg">
       <h1 className="text-2xl mb-4">Inventory Data</h1>
       <div className="mb-4">
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="btn-blue">Add New Item</Button>
+            <Button className="btn-blue shadow-lg">Add New Item</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -64,13 +64,13 @@ const Inventory = () => {
                 <Label htmlFor="total">Total</Label>
                 <Input id="total" name="total" value={newItem.total} onChange={handleInputChange} />
               </div>
-              <Button className="btn-blue" onClick={handleAddItem}>Add Item</Button>
+              <Button className="btn-blue shadow-lg" onClick={handleAddItem}>Add Item</Button>
             </div>
           </DialogContent>
         </Dialog>
       </div>
       <h2 className="text-xl mb-2">Non-Alcoholic Beverages</h2>
-      <Table>
+      <Table className="shadow-lg">
         <TableHeader>
           <TableRow>
             <TableHead>Item</TableHead>
@@ -93,7 +93,7 @@ const Inventory = () => {
         </TableBody>
       </Table>
       <h2 className="text-xl mt-4 mb-2">Alcohol Record</h2>
-      <Table>
+      <Table className="shadow-lg">
         <TableHeader>
           <TableRow>
             <TableHead>Item</TableHead>
