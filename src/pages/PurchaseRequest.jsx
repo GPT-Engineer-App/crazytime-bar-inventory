@@ -40,7 +40,7 @@ const PurchaseRequest = () => {
   };
 
   return (
-    <div className="shadow-lg p-6 rounded-lg">
+    <div className="shadow-lg p-6 rounded-lg bg-background">
       <h1 className="text-2xl mb-4">Purchase Request</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -74,7 +74,7 @@ const PurchaseRequest = () => {
             required
           />
         </div>
-        <Button type="submit" className="btn-blue">
+        <Button type="submit" className="btn-blue shadow-lg">
           Submit Request
         </Button>
       </form>
