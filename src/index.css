@@ -70,6 +70,10 @@
   .btn-blue {
     @apply bg-blue-500 text-white hover:bg-blue-600;
   }
+
+  .shadow-lg {
+    @apply shadow-lg;
+  }
 }
 
 @layer base {
