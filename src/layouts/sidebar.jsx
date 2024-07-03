@@ -41,7 +41,7 @@ const Layout = () => {
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <Sidebar />
       <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 border-b bg-blue-900 px-4 lg:h-[60px] lg:px-6 shadow-lg mb-4">
+        <header className="flex h-14 items-center gap-4 border-b bg-dark-blue px-4 lg:h-[60px] lg:px-6 shadow-lg mb-4">
           <MobileSidebar />
           <div className="w-full flex-1">{/* Add nav bar content here! */}</div>
           <UserDropdown />
@@ -56,7 +56,7 @@ const Layout = () => {
 };
 
 const Sidebar = () => (
-  <div className="hidden border-r bg-blue-900 md:block shadow-lg">
+  <div className="hidden border-r bg-dark-blue text-black md:block shadow-lg">
     <div className="flex h-full max-h-screen flex-col gap-2">
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
         <NavLink to="/" className="flex items-center gap-2 font-semibold text-white">
@@ -102,7 +102,7 @@ const MobileSidebar = () => {
           <span className="sr-only">Toggle navigation menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="flex flex-col shadow-lg" ref={sheetRef}>
+      <SheetContent side="left" className="flex flex-col bg-dark-blue text-black shadow-lg" ref={sheetRef}>
         <nav className="grid gap-2 text-lg font-medium">
           <NavLink
             to="/"
@@ -157,7 +157,7 @@ const SidebarNavLink = ({ to, children }) => (
 );
 
 const Footer = () => (
-  <footer className="flex justify-around items-center h-16 bg-blue-900 border-t shadow-lg">
+  <footer className="flex justify-around items-center h-16 bg-dark-blue border-t shadow-lg">
     <NavLink to="/" className="flex flex-col items-center text-white">
       <Home className="h-6 w-6 text-black" />
       <span className="text-xs">Home</span>
