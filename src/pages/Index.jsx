@@ -6,15 +6,15 @@ const Index = () => {
     <div className="text-center shadow-lg p-6 rounded-lg shadow-lg">
       <h1 className="text-3xl mb-4">Welcome to Crazytime Restobar Inventory System</h1>
       <p className="mb-4">Manage your inventory efficiently and effectively.</p>
-      <div className="space-x-4">
-        <Link to="/inventory">
-          <Button className="btn-blue shadow-lg">Inventory Data</Button>
+      <div className="flex flex-col items-center space-y-4">
+        <Link to="/inventory" className="w-1/2">
+          <Button className="w-full bg-blue-500 text-white hover:bg-blue-600 rounded-lg">Inventory Data</Button>
         </Link>
-        <Link to="/settings">
-          <Button className="btn-blue shadow-lg">Settings</Button>
+        <Link to="/settings" className="w-1/2">
+          <Button className="w-full bg-blue-500 text-white hover:bg-blue-600 rounded-lg">Settings</Button>
         </Link>
-        <Link to="/login">
-          <Button className="btn-blue shadow-lg">Login</Button>
+        <Link to="/login" className="w-1/2">
+          <Button className="w-full bg-blue-500 text-white hover:bg-blue-600 rounded-lg">Login</Button>
         </Link>
       </div>
     </div>
