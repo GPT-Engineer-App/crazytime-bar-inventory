@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2, Home, BarChart, PieChart, Settings, ChevronLeft, ChevronRight } from "lucide-react";
+import { CircleUser, Menu, Package2, Home, BarChart, PieChart, Settings } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const navItems = [
