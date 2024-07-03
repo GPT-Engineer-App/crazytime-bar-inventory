@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Home, Package2, Settings } from "lucide-react";
+import { CircleUser, Menu, Home, Package2, Settings, BarChart, PieChart } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const navItems = [
