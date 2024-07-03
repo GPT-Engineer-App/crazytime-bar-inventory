@@ -9,9 +9,13 @@ const SettingsPage = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
+    const savedWebhookUrl = localStorage.getItem("webhookUrl");
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    }
+    if (savedWebhookUrl) {
+      setWebhookUrl(savedWebhookUrl);
     }
   }, []);
 
