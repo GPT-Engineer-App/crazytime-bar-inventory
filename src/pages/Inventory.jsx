@@ -21,7 +21,24 @@ const Inventory = () => {
     } else {
       setAlcoholicItems([...alcoholicItems, newItem]);
     }
+    sendToWebhook("add", newItem);
     setNewItem({ category: "non-alcoholic", item: "", quantity: "", openingStock: "", closingStock: "", total: "" });
+  };
+
+  const sendToWebhook = (action, item) => {
+    const webhookUrl = localStorage.getItem("webhookUrl");
+    if (webhookUrl) {
+      fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ action, item }),
+      })
+      .then(response => response.json())
+      .then(data => console.log("Success:", data))
+      .catch(error => console.error("Error:", error));
+    }
   };
 
   return (
