@@ -33,16 +33,17 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    --glow-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 84% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222.2 84% 10%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
@@ -63,12 +64,21 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    --glow-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
 }
 
 @layer components {
   .btn-blue {
-    @apply bg-blue-500 text-white hover:bg-blue-600;
+    @apply bg-blue-500 text-white hover:bg-blue-600 shadow-[var(--glow-shadow)];
+  }
+
+  .card {
+    @apply shadow-[var(--glow-shadow)];
+  }
+
+  .container {
+    @apply shadow-[var(--glow-shadow)];
   }
 }
 
@@ -78,5 +88,8 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .card, .container, .btn-blue {
+    @apply shadow-[var(--glow-shadow)];
   }
 }
