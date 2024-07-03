@@ -42,7 +42,7 @@ const Login = () => {
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <Button className="btn-blue shadow-lg" onClick={handleLogin}>Login</Button>
+          <Button className="btn-blue" onClick={handleLogin}>Login</Button>
         </div>
       </div>
     </div>

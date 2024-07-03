@@ -68,7 +68,10 @@
 
 @layer components {
   .btn-blue {
-    @apply bg-blue-500 text-white hover:bg-blue-600;
+    @apply bg-blue-500 text-white hover:bg-blue-600 shadow-lg;
+  }
+  .shadow-lg {
+    @apply shadow-lg;
   }
 }
 

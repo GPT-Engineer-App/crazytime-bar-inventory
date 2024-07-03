@@ -3,18 +3,18 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
-    <div className="text-center shadow-lg p-6 rounded-lg shadow-lg">
+    <div className="text-center shadow-lg p-6 rounded-lg">
       <h1 className="text-3xl mb-4">Welcome to Crazytime Restobar Inventory System</h1>
       <p className="mb-4">Manage your inventory efficiently and effectively.</p>
       <div className="flex flex-col items-center space-y-4">
         <Link to="/inventory" className="w-1/2">
-          <Button className="w-full bg-blue-500 text-white hover:bg-blue-600 rounded-lg">Inventory Data</Button>
+          <Button className="w-full btn-blue rounded-lg">Inventory Data</Button>
         </Link>
         <Link to="/settings" className="w-1/2">
-          <Button className="w-full bg-blue-500 text-white hover:bg-blue-600 rounded-lg">Settings</Button>
+          <Button className="w-full btn-blue rounded-lg">Settings</Button>
         </Link>
         <Link to="/login" className="w-1/2">
-          <Button className="w-full bg-blue-500 text-white hover:bg-blue-600 rounded-lg">Login</Button>
+          <Button className="w-full btn-blue rounded-lg">Login</Button>
         </Link>
       </div>
     </div>

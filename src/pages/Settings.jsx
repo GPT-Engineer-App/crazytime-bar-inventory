@@ -32,7 +32,7 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="shadow-lg p-6 rounded-lg shadow-lg">
+    <div className="shadow-lg p-6 rounded-lg">
       <h1 className="text-2xl mb-4">Settings</h1>
       <div className="space-y-4">
         <div>
@@ -46,7 +46,7 @@ const SettingsPage = () => {
             <option value="dark">Dark</option>
           </select>
         </div>
-        <Button className="btn-blue shadow-lg" onClick={handleSave}>Save Webhook URL</Button>
+        <Button className="btn-blue" onClick={handleSave}>Save Webhook URL</Button>
       </div>
     </div>
   );
