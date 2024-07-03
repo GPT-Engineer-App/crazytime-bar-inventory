@@ -25,7 +25,7 @@ const Inventory = () => {
   };
 
   return (
-    <div className="shadow-lg p-6 rounded-lg">
+    <div className="shadow-lg p-6 rounded-lg shadow-lg">
       <h1 className="text-2xl mb-4">Inventory Data</h1>
       <div className="mb-4">
         <Dialog>
