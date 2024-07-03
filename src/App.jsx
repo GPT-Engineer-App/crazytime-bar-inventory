@@ -8,6 +8,7 @@ import Index from "./pages/Index.jsx";
 import Inventory from "./pages/Inventory.jsx";
 import SettingsPage from "./pages/Settings.jsx";
 import Login from "./pages/Login.jsx";
+import PurchaseRequest from "./pages/PurchaseRequest.jsx";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,11 @@ export const navItems = [
     to: "/settings",
     icon: <Settings className="h-4 w-4" />,
   },
+  {
+    title: "Purchase Request",
+    to: "/purchase-request",
+    icon: <Package2 className="h-4 w-4" />,
+  },
 ];
 
 const App = () => {
@@ -41,6 +47,7 @@ const App = () => {
               <Route path="inventory" element={<Inventory />} />
               <Route path="settings" element={<SettingsPage />} />
               <Route path="login" element={<Login />} />
+              <Route path="purchase-request" element={<PurchaseRequest />} />
             </Route>
           </Routes>
         </Router>

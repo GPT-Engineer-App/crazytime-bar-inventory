@@ -11,7 +11,29 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { CircleUser, Menu, Package2, Home, BarChart, PieChart, Settings } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+
+const navItems = [
+  {
+    title: "Home",
+    to: "/",
+    icon: <Home className="h-4 w-4" />,
+  },
+  {
+    title: "Inventory",
+    to: "/inventory",
+    icon: <Package2 className="h-4 w-4" />,
+  },
+  {
+    title: "Settings",
+    to: "/settings",
+    icon: <Settings className="h-4 w-4" />,
+  },
+  {
+    title: "Purchase Request",
+    to: "/purchase-request",
+    icon: <Package2 className="h-4 w-4" />,
+  },
+];
 
 const Layout = () => {
   return (
