@@ -16,22 +16,22 @@ export const navItems = [
   {
     title: "Home",
     to: "/",
-    icon: <Home className="h-4 w-4" />,
+    icon: <Home className="h-4 w-4 text-black" />,
   },
   {
     title: "Inventory",
     to: "/inventory",
-    icon: <Package2 className="h-4 w-4" />,
+    icon: <Package2 className="h-4 w-4 text-black" />,
   },
   {
     title: "Settings",
     to: "/settings",
-    icon: <Settings className="h-4 w-4" />,
+    icon: <Settings className="h-4 w-4 text-black" />,
   },
   {
     title: "Purchase Request",
     to: "/purchase-request",
-    icon: <Package2 className="h-4 w-4" />,
+    icon: <Package2 className="h-4 w-4 text-black" />,
   },
 ];
 
