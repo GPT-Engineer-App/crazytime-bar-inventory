@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2, Home, BarChart, PieChart, Settings } from "lucide-react";
+import { CircleUser, Menu, Package2, Home, BarChart, PieChart, Settings, ChevronLeft, ChevronRight } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const navItems = [
@@ -36,12 +37,18 @@ const navItems = [
 ];
 
 const Layout = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <Sidebar />
+      <Sidebar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       <div className="flex flex-col">
         <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6 shadow-lg mb-4">
-          <MobileSidebar />
+          <MobileSidebar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           <div className="w-full flex-1">{/* Add nav bar content here! */}</div>
           <UserDropdown />
         </header>
@@ -54,21 +61,24 @@ const Layout = () => {
   );
 };
 
-const Sidebar = () => (
-  <div className="hidden border-r bg-muted/40 md:block shadow-lg">
+const Sidebar = ({ isMenuOpen, toggleMenu }) => (
+  <div className={`hidden border-r bg-muted/40 md:block shadow-lg ${isMenuOpen ? 'w-64' : 'w-16'}`}>
     <div className="flex h-full max-h-screen flex-col gap-2">
-      <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
+      <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6 justify-between">
         <NavLink to="/" className="flex items-center gap-2 font-semibold">
           <Package2 className="h-6 w-6" />
-          <span>Crazytime Restobar</span>
+          {isMenuOpen && <span>Crazytime Restobar</span>}
         </NavLink>
+        <button onClick={toggleMenu} className="p-2">
+          {isMenuOpen ? <ChevronLeft className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+        </button>
       </div>
       <div className="flex-1">
         <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2">
           {navItems.map((item) => (
-            <SidebarNavLink key={item.to} to={item.to}>
+            <SidebarNavLink key={item.to} to={item.to} isMenuOpen={isMenuOpen}>
               {item.icon}
-              {item.title}
+              {isMenuOpen && item.title}
             </SidebarNavLink>
           ))}
         </nav>
@@ -77,7 +87,7 @@ const Sidebar = () => (
   </div>
 );
 
-const MobileSidebar = () => (
+const MobileSidebar = ({ isMenuOpen, toggleMenu }) => (
   <Sheet>
     <SheetTrigger asChild>
       <Button variant="outline" size="icon" className="shrink-0 md:hidden shadow-lg">
@@ -85,21 +95,25 @@ const MobileSidebar = () => (
         <span className="sr-only">Toggle navigation menu</span>
       </Button>
     </SheetTrigger>
-    <SheetContent side="left" className="flex flex-col shadow-lg">
+    <SheetContent side="left" className={`flex flex-col shadow-lg ${isMenuOpen ? 'w-64' : 'w-16'}`}>
       <nav className="grid gap-2 text-lg font-medium">
         <NavLink
           to="/"
           className="flex items-center gap-2 text-lg font-semibold mb-4"
         >
           <Package2 className="h-6 w-6" />
-          <span>Crazytime Restobar</span>
+          {isMenuOpen && <span>Crazytime Restobar</span>}
         </NavLink>
         {navItems.map((item) => (
-          <SidebarNavLink key={item.to} to={item.to}>
-            {item.title}
+          <SidebarNavLink key={item.to} to={item.to} isMenuOpen={isMenuOpen}>
+            {item.icon}
+            {isMenuOpen && item.title}
           </SidebarNavLink>
         ))}
       </nav>
+      <button onClick={toggleMenu} className="p-2">
+        {isMenuOpen ? <ChevronLeft className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+      </button>
     </SheetContent>
   </Sheet>
 );
@@ -123,13 +137,14 @@ const UserDropdown = () => (
   </DropdownMenu>
 );
 
-const SidebarNavLink = ({ to, children }) => (
+const SidebarNavLink = ({ to, children, isMenuOpen }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
       cn(
         "flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary text-muted-foreground shadow-lg",
         isActive && "text-primary bg-muted",
+        isMenuOpen ? "justify-start" : "justify-center"
       )
     }
   >
