@@ -21,7 +21,22 @@ const PurchaseRequest = () => {
     // Handle form submission logic here
     console.log("Form submitted:", formData);
     alert("Purchase request submitted!");
+    sendToZapier(formData);
     setFormData({ itemName: "", quantity: "", reason: "" });
+  };
+
+  const sendToZapier = (data) => {
+    const zapierWebhookUrl = "YOUR_ZAPIER_WEBHOOK_URL"; // Replace with your Zapier webhook URL
+    fetch(zapierWebhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("Success:", data))
+      .catch((error) => console.error("Error:", error));
   };
 
   return (
