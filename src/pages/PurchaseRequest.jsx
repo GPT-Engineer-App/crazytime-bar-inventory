@@ -25,7 +25,7 @@ const PurchaseRequest = () => {
   };
 
   return (
-    <div className="shadow-lg p-6 rounded-lg shadow-lg">
+    <div className="container shadow-lg p-6 rounded-lg">
       <h1 className="text-2xl mb-4">Purchase Request</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
