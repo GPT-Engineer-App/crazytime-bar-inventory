@@ -8,10 +8,10 @@ const Index = () => {
       <p className="mb-4">Manage your inventory efficiently and effectively.</p>
       <div className="space-x-4">
         <Link to="/inventory">
-          <Button variant="outline">Inventory Data</Button>
+          <Button className="btn-blue">Inventory Data</Button>
         </Link>
         <Link to="/settings">
-          <Button variant="outline">Settings</Button>
+          <Button className="btn-blue">Settings</Button>
         </Link>
       </div>
     </div>

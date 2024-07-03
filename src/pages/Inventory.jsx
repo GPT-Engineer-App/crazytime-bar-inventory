@@ -30,7 +30,7 @@ const Inventory = () => {
       <div className="mb-4">
         <Dialog>
           <DialogTrigger asChild>
-            <Button variant="outline">Add New Item</Button>
+            <Button className="btn-blue">Add New Item</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -64,7 +64,7 @@ const Inventory = () => {
                 <Label htmlFor="total">Total</Label>
                 <Input id="total" name="total" value={newItem.total} onChange={handleInputChange} />
               </div>
-              <Button onClick={handleAddItem}>Add Item</Button>
+              <Button className="btn-blue" onClick={handleAddItem}>Add Item</Button>
             </div>
           </DialogContent>
         </Dialog>

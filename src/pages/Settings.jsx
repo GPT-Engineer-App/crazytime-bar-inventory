@@ -19,7 +19,7 @@ const SettingsPage = () => {
           <Label htmlFor="webhookUrl">Webhook URL</Label>
           <Input id="webhookUrl" value={webhookUrl} onChange={(e) => setWebhookUrl(e.target.value)} />
         </div>
-        <Button onClick={handleSave}>Save Webhook URL</Button>
+        <Button className="btn-blue" onClick={handleSave}>Save Webhook URL</Button>
       </div>
     </div>
   );
