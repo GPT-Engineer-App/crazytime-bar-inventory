@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -77,32 +78,49 @@ const Sidebar = () => (
   </div>
 );
 
-const MobileSidebar = () => (
-  <Sheet>
-    <SheetTrigger asChild>
-      <Button variant="outline" size="icon" className="shrink-0 md:hidden shadow-lg">
-        <Menu className="h-5 w-5" />
-        <span className="sr-only">Toggle navigation menu</span>
-      </Button>
-    </SheetTrigger>
-    <SheetContent side="left" className="flex flex-col shadow-lg">
-      <nav className="grid gap-2 text-lg font-medium">
-        <NavLink
-          to="/"
-          className="flex items-center gap-2 text-lg font-semibold mb-4"
-        >
-          <Package2 className="h-6 w-6" />
-          <span>Crazytime Restobar</span>
-        </NavLink>
-        {navItems.map((item) => (
-          <SidebarNavLink key={item.to} to={item.to}>
-            {item.title}
-          </SidebarNavLink>
-        ))}
-      </nav>
-    </SheetContent>
-  </Sheet>
-);
+const MobileSidebar = () => {
+  const sheetRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sheetRef.current && !sheetRef.current.contains(event.target)) {
+        document.querySelector('[data-state="open"]')?.click();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline" size="icon" className="shrink-0 md:hidden shadow-lg" data-state="closed">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle navigation menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="left" className="flex flex-col shadow-lg" ref={sheetRef}>
+        <nav className="grid gap-2 text-lg font-medium">
+          <NavLink
+            to="/"
+            className="flex items-center gap-2 text-lg font-semibold mb-4"
+          >
+            <Package2 className="h-6 w-6" />
+            <span>Crazytime Restobar</span>
+          </NavLink>
+          {navItems.map((item) => (
+            <SidebarNavLink key={item.to} to={item.to}>
+              {item.title}
+            </SidebarNavLink>
+          ))}
+        </nav>
+      </SheetContent>
+    </Sheet>
+  );
+};
 
 const UserDropdown = () => (
   <DropdownMenu>
