@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2, Home, BarChart, PieChart, Settings } from "lucide-react";
+import { CircleUser, Menu, Package2, Home, BarChart, PieChart, Settings, ChevronLeft, ChevronRight } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const navItems = [
@@ -54,28 +55,35 @@ const Layout = () => {
   );
 };
 
-const Sidebar = () => (
-  <div className="hidden border-r bg-muted/40 md:block shadow-lg">
-    <div className="flex h-full max-h-screen flex-col gap-2">
-      <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-        <NavLink to="/" className="flex items-center gap-2 font-semibold">
-          <Package2 className="h-6 w-6" />
-          <span>Crazytime Restobar</span>
-        </NavLink>
-      </div>
-      <div className="flex-1">
-        <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2">
-          {navItems.map((item) => (
-            <SidebarNavLink key={item.to} to={item.to}>
-              {item.icon}
-              {item.title}
-            </SidebarNavLink>
-          ))}
-        </nav>
+const Sidebar = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className={`hidden border-r bg-muted/40 md:block shadow-lg ${isExpanded ? 'w-64' : 'w-20'}`}>
+      <div className="flex h-full max-h-screen flex-col gap-2">
+        <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6 justify-between">
+          <NavLink to="/" className="flex items-center gap-2 font-semibold">
+            <Package2 className="h-6 w-6" />
+            {isExpanded && <span>Crazytime Restobar</span>}
+          </NavLink>
+          <Button variant="ghost" size="icon" onClick={() => setIsExpanded(!isExpanded)}>
+            {isExpanded ? <ChevronLeft className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+          </Button>
+        </div>
+        <div className="flex-1">
+          <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2">
+            {navItems.map((item) => (
+              <SidebarNavLink key={item.to} to={item.to} isExpanded={isExpanded}>
+                {item.icon}
+                {isExpanded && item.title}
+              </SidebarNavLink>
+            ))}
+          </nav>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const MobileSidebar = () => (
   <Sheet>
@@ -123,13 +131,14 @@ const UserDropdown = () => (
   </DropdownMenu>
 );
 
-const SidebarNavLink = ({ to, children }) => (
+const SidebarNavLink = ({ to, children, isExpanded }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
       cn(
         "flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary text-muted-foreground shadow-lg",
         isActive && "text-primary bg-muted",
+        !isExpanded && "justify-center"
       )
     }
   >
