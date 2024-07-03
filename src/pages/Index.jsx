@@ -13,6 +13,9 @@ const Index = () => {
         <Link to="/settings">
           <Button className="btn-blue shadow-lg">Settings</Button>
         </Link>
+        <Link to="/login">
+          <Button className="btn-blue shadow-lg">Login</Button>
+        </Link>
       </div>
     </div>
   );

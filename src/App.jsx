@@ -7,6 +7,7 @@ import Layout from "./layouts/sidebar";
 import Index from "./pages/Index.jsx";
 import Inventory from "./pages/Inventory.jsx";
 import SettingsPage from "./pages/Settings.jsx";
+import Login from "./pages/Login.jsx";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => {
               <Route index element={<Index />} />
               <Route path="inventory" element={<Inventory />} />
               <Route path="settings" element={<SettingsPage />} />
+              <Route path="login" element={<Login />} />
             </Route>
           </Routes>
         </Router>

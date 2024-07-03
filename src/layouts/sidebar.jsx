@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu, Package2, Home, BarChart, PieChart, Settings } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
@@ -26,6 +26,7 @@ const Layout = () => {
         <main className="flex-grow p-4 overflow-auto shadow-lg">
           <Outlet />
         </main>
+        <Footer />
       </div>
     </div>
   );
@@ -112,6 +113,27 @@ const SidebarNavLink = ({ to, children }) => (
   >
     {children}
   </NavLink>
+);
+
+const Footer = () => (
+  <footer className="flex justify-around items-center h-16 bg-muted/40 border-t shadow-lg">
+    <NavLink to="/" className="flex flex-col items-center">
+      <Home className="h-6 w-6" />
+      <span className="text-xs">Home</span>
+    </NavLink>
+    <NavLink to="/reports" className="flex flex-col items-center">
+      <BarChart className="h-6 w-6" />
+      <span className="text-xs">Reports</span>
+    </NavLink>
+    <NavLink to="/analytics" className="flex flex-col items-center">
+      <PieChart className="h-6 w-6" />
+      <span className="text-xs">Analytics</span>
+    </NavLink>
+    <NavLink to="/inventory" className="flex flex-col items-center">
+      <Settings className="h-6 w-6" />
+      <span className="text-xs">Manage</span>
+    </NavLink>
+  </footer>
 );
 
 export default Layout;
