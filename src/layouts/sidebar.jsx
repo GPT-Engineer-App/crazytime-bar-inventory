@@ -17,22 +17,22 @@ const navItems = [
   {
     title: "Home",
     to: "/",
-    icon: <Home className="h-4 w-4 text-white" />,
+    icon: <Home className="h-4 w-4 text-white/70" />,
   },
   {
     title: "Inventory",
     to: "/inventory",
-    icon: <Package className="h-4 w-4 text-white" />,
+    icon: <Package className="h-4 w-4 text-white/70" />,
   },
   {
     title: "Settings",
     to: "/settings",
-    icon: <Settings className="h-4 w-4 text-white" />,
+    icon: <Settings className="h-4 w-4 text-white/70" />,
   },
   {
     title: "Purchase Request",
     to: "/purchase-request",
-    icon: <ShoppingCart className="h-4 w-4 text-white" />,
+    icon: <ShoppingCart className="h-4 w-4 text-white/70" />,
   },
 ];
 
@@ -60,7 +60,7 @@ const Sidebar = () => (
     <div className="flex h-full max-h-screen flex-col gap-2">
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
         <NavLink to="/" className="flex items-center gap-2 font-semibold text-white">
-          <Home className="h-6 w-6 text-white" />
+          <Home className="h-6 w-6 text-white/70" />
           <span>Crazytime Restobar</span>
         </NavLink>
       </div>
@@ -109,7 +109,7 @@ const MobileSidebar = () => {
             to="/"
             className="flex items-center gap-2 text-lg font-semibold mb-4 text-white"
           >
-            <Home className="h-6 w-6 text-white" />
+            <Home className="h-6 w-6 text-white/70" />
             <span>Crazytime Restobar</span>
           </NavLink>
           {navItems.map((item) => (
@@ -161,19 +161,19 @@ const SidebarNavLink = ({ to, children }) => (
 const Footer = () => (
   <footer className="flex justify-around items-center h-16 bg-blue-900 border-t shadow-lg">
     <NavLink to="/" className="flex flex-col items-center text-white">
-      <Home className="h-6 w-6 text-white" />
+      <Home className="h-6 w-6 text-white/70" />
       <span className="text-xs">Home</span>
     </NavLink>
     <NavLink to="/reports" className="flex flex-col items-center text-white">
-      <BarChart className="h-6 w-6 text-white" />
+      <BarChart className="h-6 w-6 text-white/70" />
       <span className="text-xs">Reports</span>
     </NavLink>
     <NavLink to="/analytics" className="flex flex-col items-center text-white">
-      <PieChart className="h-6 w-6 text-white" />
+      <PieChart className="h-6 w-6 text-white/70" />
       <span className="text-xs">Analytics</span>
     </NavLink>
     <NavLink to="/inventory" className="flex flex-col items-center text-white">
-      <Settings className="h-6 w-6 text-white" />
+      <Settings className="h-6 w-6 text-white/70" />
       <span className="text-xs">Manage</span>
     </NavLink>
   </footer>

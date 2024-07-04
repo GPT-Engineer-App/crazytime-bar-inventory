@@ -15,22 +15,22 @@ const navItems = [
   {
     title: "Home",
     to: "/",
-    icon: <Home className="h-4 w-4" />,
+    icon: <Home className="h-4 w-4 text-white" />,
   },
   {
     title: "Inventory",
     to: "/inventory",
-    icon: <Package className="h-4 w-4" />,
+    icon: <Package className="h-4 w-4 text-white" />,
   },
   {
     title: "Settings",
     to: "/settings",
-    icon: <Settings className="h-4 w-4" />,
+    icon: <Settings className="h-4 w-4 text-white" />,
   },
   {
     title: "Purchase Request",
     to: "/purchase-request",
-    icon: <ShoppingCart className="h-4 w-4" />,
+    icon: <ShoppingCart className="h-4 w-4 text-white" />,
   },
 ];
 
