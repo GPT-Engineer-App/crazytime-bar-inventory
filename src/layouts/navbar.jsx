@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -35,12 +34,12 @@ const DesktopNav = () => (
       to="/"
       className="flex items-center gap-2 text-lg font-semibold md:text-base"
     >
-      <Home className="h-6 w-6 text-black" />
+      <Home className="h-6 w-6 text-primary-foreground" />
       <span className="sr-only">Acme Inc</span>
     </NavItem>
     {navItems.map((item) => (
       <NavItem key={item.to} to={item.to}>
-        {React.cloneElement(item.icon, { className: "h-4 w-4 text-black" })}
+        {item.icon}
         {item.title}
       </NavItem>
     ))}
@@ -51,7 +50,7 @@ const MobileNav = () => (
   <Sheet>
     <SheetTrigger asChild>
       <Button variant="outline" size="icon" className="shrink-0 md:hidden">
-        <Menu className="h-5 w-5 text-black" />
+        <Menu className="h-5 w-5 text-primary-foreground" />
         <span className="sr-only">Toggle navigation menu</span>
       </Button>
     </SheetTrigger>
@@ -61,13 +60,13 @@ const MobileNav = () => (
           to="/"
           className="flex items-center gap-2 text-lg font-semibold"
         >
-          <Home className="h-6 w-6 text-black" />
+          <Home className="h-6 w-6 text-primary-foreground" />
           <span className="sr-only">Acme Inc</span>
         </NavItem>
         {navItems.map((item) => (
           <NavItem key={item.to} to={item.to}>
-            {React.cloneElement(item.icon, { className: "h-4 w-4 text-black" })}
-            {item.title}
+            {item.icon}
+        {item.title}
           </NavItem>
         ))}
       </nav>
@@ -79,7 +78,7 @@ const UserMenu = () => (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
       <Button variant="secondary" size="icon" className="rounded-full">
-        <CircleUser className="h-5 w-5 text-black" />
+        <CircleUser className="h-5 w-5 text-primary-foreground" />
         <span className="sr-only">Toggle user menu</span>
       </Button>
     </DropdownMenuTrigger>
