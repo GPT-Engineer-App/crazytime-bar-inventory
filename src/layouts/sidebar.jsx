@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Home, Package2, Settings, BarChart, PieChart } from "lucide-react";
+import { CircleUser, Menu, Home, Package, Settings, ShoppingCart, BarChart, PieChart } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const navItems = [
@@ -22,7 +22,7 @@ const navItems = [
   {
     title: "Inventory",
     to: "/inventory",
-    icon: <Package2 className="h-4 w-4 text-white" />,
+    icon: <Package className="h-4 w-4 text-white" />,
   },
   {
     title: "Settings",
@@ -32,7 +32,7 @@ const navItems = [
   {
     title: "Purchase Request",
     to: "/purchase-request",
-    icon: <Package2 className="h-4 w-4 text-white" />,
+    icon: <ShoppingCart className="h-4 w-4 text-white" />,
   },
 ];
 

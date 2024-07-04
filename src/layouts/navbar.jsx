@@ -9,9 +9,30 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Home, Package2, Settings } from "lucide-react";
+import { CircleUser, Menu, Home, Package, Settings, ShoppingCart } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+const navItems = [
+  {
+    title: "Home",
+    to: "/",
+    icon: <Home className="h-4 w-4" />,
+  },
+  {
+    title: "Inventory",
+    to: "/inventory",
+    icon: <Package className="h-4 w-4" />,
+  },
+  {
+    title: "Settings",
+    to: "/settings",
+    icon: <Settings className="h-4 w-4" />,
+  },
+  {
+    title: "Purchase Request",
+    to: "/purchase-request",
+    icon: <ShoppingCart className="h-4 w-4" />,
+  },
+];
 
 const Layout = () => {
   return (
