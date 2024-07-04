@@ -97,8 +97,9 @@ const MobileSidebar = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="shrink-0 md:hidden p-2 m-2 shadow-lg" data-state="closed">
+        <Button variant="outline" size="icon" className="shrink-0 md:hidden p-2 m-2 shadow-lg flex flex-col items-center" data-state="closed">
           <Menu className="h-5 w-5 text-white" />
+          <span className="text-xs text-white">Menu</span>
           <span className="sr-only">Toggle navigation menu</span>
         </Button>
       </SheetTrigger>
@@ -126,8 +127,9 @@ const MobileSidebar = () => {
 const UserDropdown = () => (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <Button variant="secondary" size="icon" className="rounded-full p-2 m-2 shadow-lg">
+      <Button variant="secondary" size="icon" className="rounded-full p-2 m-2 shadow-lg flex flex-col items-center">
         <CircleUser className="h-5 w-5 text-white" />
+        <span className="text-xs text-white">User</span>
         <span className="sr-only">Toggle user menu</span>
       </Button>
     </DropdownMenuTrigger>
